@@ -115,6 +115,14 @@ $siteName = basename(
     valet_support_wildcard_dns($_SERVER['HTTP_HOST'], $valetConfig),
     '.'.$valetConfig['tld']
 );
+$siteName = basename(
+    $siteName,
+    '.'.$valetConfig['tld2']
+);
+$siteName = basename(
+    $siteName,
+    '.'.$valetConfig['tld3']
+);
 
 if (strpos($siteName, 'www.') === 0) {
     $siteName = substr($siteName, 4);
